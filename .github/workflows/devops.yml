@@ -5,13 +5,25 @@ on:
   branches:
     - main
 jobs:
-  Devops:
+  Code:
    runs-on: ubuntu-latest
    steps:
-     - name: writecode
-       run: echo "CODE"
+     - name: GitCheckout
+       run: echo "Checkout"
+  Build:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Build
+       run: echo "Build using Docker"
+  Test:
+   runs-on: ubuntu-latest
+   steps:
      - name: Test
-       run: echo "TEST"
+       run: echo "TEST using Docker logs/commands"
+  Deploy:
+   runs-on: ubuntu-latest
+   steps:
      - name: Deploy
-       run: echo "Deploy"
+       run: echo "Deploy using Git-Hub actions"
+       
     
