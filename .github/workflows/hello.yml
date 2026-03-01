@@ -17,4 +17,10 @@ jobs:
    steps:
     - name: what are you leaning?
       run: echo "learning Devops from TWS"
+  phases:
+   runs-on: ubuntu-latest
+   steps:
+     - name: What is the progress!!
+       run: echo "Finished Phase1 from TWS"
+       
     
