@@ -12,3 +12,9 @@ jobs:
         run: echo "Hello Dosto"
       - name: say hello to username
         run: echo "Hello $USER"
+  learn:
+   runs-on: ubuntu-latest
+   steps:
+    - name: what are you leaning?
+      run: echo "learning Devops from TWS"
+    
