@@ -1,0 +1,17 @@
+---
+name: Devops
+on: 
+ push: 
+  branches:
+    - main
+jobs:
+  Devops:
+   runs-on: ubuntu-latest
+   steps:
+     - name: writecode
+       run: echo "CODE"
+     - name: Test
+       run: echo "TEST"
+     - name: Deploy
+       run: echo "Deploy"
+    
