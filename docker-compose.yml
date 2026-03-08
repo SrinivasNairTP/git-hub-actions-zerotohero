@@ -2,6 +2,7 @@ services:
  
 
   web:
-    image: ${{ DOCKERHUB_USER }}/github-actions-app
+    image: srini2390/github-actions-app:latest
     ports:
-      -80:80
+      - "80:80"
+    
