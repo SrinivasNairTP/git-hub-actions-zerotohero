@@ -1,23 +1,31 @@
-name: dependancy scan
+name: dependency scan
 
 on:
- workflow_call:
+  workflow_call:
 
 jobs:
-   dependency-check:
-       runs-on: ubuntu-latest
-       steps:
-           - name: Code checkout
-             uses: actions/checkout@v4
+  dependency-check:
+    runs-on: ubuntu-latest
 
-           - name: Setup Python
-             uses: actions/setup-python@v5
-             with:
-                python-version: "3.12"
-      
-           - name: Install pip  audit
-             run: pip install pip-audit
-             
-      
-           - name: Audit dependencies
-             run: pip-audit -r requirements.txt
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: Audit dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip-audit -r requirements.txt
+          else
+            echo "No requirements.txt found, skipping scan"
+          fi
