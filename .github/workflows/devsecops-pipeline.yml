@@ -4,21 +4,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  code-quality:
+  Code quality:
     uses: ./.github/workflows/code-quality.yml
   
 
   secrets-scan:
-    needs: code-quality
     uses: ./.github/workflows/secrets-scan.yml
     
 
   dependency-scan:
-    needs: secrets-scan
     uses: ./.github/workflows/dependancy-check.yml
     
 
   docker-scan:
-    needs: dependency-scan
     uses: ./.github/workflows/docker-lint.yml
     

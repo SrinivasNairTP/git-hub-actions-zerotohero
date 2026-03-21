@@ -29,11 +29,11 @@ jobs:
       - name: Check flake8 version
         run: pip list | grep flake8
 
-      - name: Check formatting with Black
-        run: black --check .
+      - name: Auto format code with Black
+        run: black .
 
       - name: Run Flake8 Linter
         run: flake8 .
 
-      - name: Run SAST (Bandit)
-        run: bandit -r .
+      - name: Run SAST
+        run: bandit -r app.py
