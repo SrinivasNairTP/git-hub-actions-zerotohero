@@ -10,17 +10,17 @@ jobs:
       - run: echo "Pipeline triggered"
 
   Code-quality:
-    uses: ./.github/workflows/code-quality.yml
+    uses: /.github/workflows/code-quality.yml
   
 
   secrets-scan:
-    uses: ./.github/workflows/secrets-scan.yml
+    uses: /.github/workflows/secrets-scan.yml
     
 
   dependency-scan:
-    uses: ./.github/workflows/dependancy-check.yml
+    uses: /.github/workflows/dependancy-check.yml
     
 
   docker-scan:
-    uses: ./.github/workflows/docker-lint.yml
+    uses: /.github/workflows/docker-lint.yml
     
