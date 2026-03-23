@@ -2,7 +2,7 @@ name: Docker lint
 
 on: 
   workflow_call:
-  
+
 jobs:
   validate-dockerfile:
     runs-on: ubuntu-latest
@@ -21,4 +21,4 @@ jobs:
       - name: Validate Dockerfile
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: dockerfile
+          dockerfile: Dockerfile
