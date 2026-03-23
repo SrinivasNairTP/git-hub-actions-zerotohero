@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
+# CI [ Continuous Integration with Security Scanning]
   debug:
     runs-on: ubuntu-latest
     steps:
@@ -30,3 +31,7 @@ jobs:
     uses: ./.github/workflows/docker-lint.yml
     secrets: inherit
   
+  build:
+    needs: docker-scan
+    uses: ./.github/workflows/docker-build-push.yml
+    secrets: inherit
