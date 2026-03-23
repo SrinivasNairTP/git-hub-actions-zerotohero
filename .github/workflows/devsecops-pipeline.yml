@@ -1,6 +1,9 @@
 name: Devsecops End to End Pipeline
 
 on:
+  push:
+   branches: ["main"]
+  pull-request:
   workflow_dispatch:
 
 jobs:
