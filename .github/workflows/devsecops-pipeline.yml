@@ -23,7 +23,7 @@ jobs:
   dependency-scan:
     needs: secrets-scan
     uses: ./.github/workflows/dependancy-check.yml
-    secrets: inherit
+    
 
   docker-scan:
     needs: dependency-scan
