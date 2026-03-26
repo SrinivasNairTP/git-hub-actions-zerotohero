@@ -7,10 +7,10 @@ on:
 
 jobs:
 # CI [ Continuous Integration with Security Scanning]
-  debug:
+  # debug:
     runs-on: ubuntu-latest
-    steps:
-      - run: echo "Pipeline triggered"
+    # steps:
+    #   - run: echo "Pipeline triggered"
 
   code-quality:
     uses: ./.github/workflows/code-quality.yml
