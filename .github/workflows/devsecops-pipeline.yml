@@ -8,6 +8,7 @@ on:
 jobs:
 # CI [ Continuous Integration with Security Scanning]
   # debug:
+    Devsecops-pipeline:
     runs-on: ubuntu-latest
     # steps:
     #   - run: echo "Pipeline triggered"
