@@ -36,4 +36,4 @@ jobs:
         run: flake8 .
 
       - name: Run SAST
-        run: bandit -r app.py -s b104
+        run: bandit -r app.py -s B104
