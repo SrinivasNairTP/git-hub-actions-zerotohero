@@ -15,7 +15,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Run Trivy Scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.33.1
         with:
+          image-ref: ${ { secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}
           severity: CRITICAL
           exit-code: 1
