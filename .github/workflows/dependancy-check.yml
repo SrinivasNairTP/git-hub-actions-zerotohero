@@ -25,7 +25,7 @@ jobs:
       - name: Audit dependencies
         run: |
           if [ -f requirements.txt ]; then
-            pip-audit -r requirements.txt --severity high
+            pip-audit -r requirements.txt 
           else
             echo "No requirements.txt found, skipping scan"
           fi
