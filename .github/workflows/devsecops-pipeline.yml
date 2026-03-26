@@ -11,32 +11,29 @@ jobs:
     runs-on: ubuntu-latest
     # steps:
     #   - run: echo "Pipeline triggered"
-
-  code-quality:
-    uses: ./.github/workflows/code-quality.yml
-  
-
-  secrets-scan:
-    needs: code-quality
-    uses: ./.github/workflows/secrets-scan.yml
-    secrets: inherit
-
-  dependency-scan:
-    needs: secrets-scan
-    uses: ./.github/workflows/dependancy-check.yml
+    code-quality:
+     uses: ./.github/workflows/code-quality.yml
     
-
-  docker-scan:
-    needs: dependency-scan
-    uses: ./.github/workflows/docker-lint.yml
-    secrets: inherit
-  
-  build:
-    needs: [code-quality, secrets-scan, dependency-scan , docker-scan]
-    uses: ./.github/workflows/docker-build-push.yml
-    secrets: inherit
-
-  trivy:
-   needs: [build]
-   uses: ./.github/workflows/image-scan.yml
+    secrets-scan:
+     needs: code-quality
+     uses: ./.github/workflows/secrets-scan.yml
+     secrets: inherit
+    
+    dependency-scan:
+     needs: secrets-scan
+     uses: ./.github/workflows/dependancy-check.yml
+    
+    docker-scan:
+     needs: dependency-scan
+     uses: ./.github/workflows/docker-lint.yml
+     secrets: inherit
+    
+    build:
+     needs: [code-quality, secrets-scan, dependency-scan , docker-scan]
+     uses: ./.github/workflows/docker-build-push.yml
+     secrets: inherit
+    
+    trivy:
+     needs: [build]
+     uses: ./.github/workflows/image-scan.yml
    
