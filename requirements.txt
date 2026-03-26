@@ -2,4 +2,3 @@ flask
 flake8
 bandit
 pip-audit
-pygments>=2.19.3
