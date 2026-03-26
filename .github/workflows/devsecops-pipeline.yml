@@ -25,7 +25,7 @@ jobs:
      uses: ./.github/workflows/dependancy-check.yml
     
     docker-scan:
-     needs: dependency-scan
+     needs: dependency-scan    
      uses: ./.github/workflows/docker-lint.yml
      secrets: inherit
     
@@ -37,4 +37,6 @@ jobs:
     trivy:
      needs: [build]
      uses: ./.github/workflows/image-scan.yml
+
+          
    
