@@ -20,6 +20,6 @@ jobs:
 
 
         with:
-          image-ref: ${ { secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}
+          image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}
           severity: CRITICAL
           exit-code: 1
