@@ -16,16 +16,13 @@ jobs:
      uses: ./.github/workflows/code-quality.yml
     
     secrets-scan:
-     needs: code-quality
      uses: ./.github/workflows/secrets-scan.yml
      secrets: inherit
     
     dependency-scan:
-     needs: secrets-scan
      uses: ./.github/workflows/dependancy-check.yml
     
-    docker-scan:
-     needs: dependency-scan    
+    docker-scan:  
      uses: ./.github/workflows/docker-lint.yml
      secrets: inherit
     
